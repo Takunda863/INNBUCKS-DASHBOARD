@@ -7,7 +7,7 @@ from datetime import timedelta
 
 # Set page configuration
 st.set_page_config(
-    page_title="InnBucks Zimbabwe Dashboard",
+    page_title="InnBucks Zimbabwe Dashboard Proof of concept by Takundanashe moyo",
     page_icon="🏦",
     layout="wide"
 )
