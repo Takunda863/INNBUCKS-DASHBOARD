@@ -107,28 +107,106 @@ def calculate_kpis(customers_df, accounts_df, transactions_df):
 customers_df, accounts_df, transactions_df = generate_innbucks_data()
 kpis = calculate_kpis(customers_df, accounts_df, transactions_df)
 
-# Custom CSS for better styling
+# Custom CSS for dark theme
 st.markdown("""
 <style>
+    /* Main background and text colors */
+    .main {
+        background-color: #0E1117;
+        color: #FAFAFA;
+    }
+    
+    /* Sidebar styling */
+    .css-1d391kg, .css-1lcbmhc {
+        background-color: #262730;
+    }
+    
+    /* Metric cards styling */
     .metric-card {
-        background-color: #f0f2f6;
+        background-color: #262730;
         padding: 20px;
         border-radius: 10px;
-        border-left: 5px solid #1E3A8A;
+        border-left: 5px solid #FF4B4B;
         margin: 10px 0;
+        color: #FAFAFA;
     }
+    
+    /* Section headers */
     .section-header {
-        color: #1E3A8A;
-        border-bottom: 2px solid #1E3A8A;
+        color: #FF4B4B;
+        border-bottom: 2px solid #FF4B4B;
         padding-bottom: 10px;
         margin: 20px 0;
+        font-weight: bold;
+    }
+    
+    /* Dataframe styling */
+    .dataframe {
+        background-color: #262730;
+        color: #FAFAFA;
+    }
+    
+    /* Streamlit metric styling */
+    [data-testid="stMetricValue"] {
+        color: #FAFAFA;
+    }
+    
+    [data-testid="stMetricLabel"] {
+        color: #FF4B4B;
+    }
+    
+    [data-testid="stMetricDelta"] {
+        color: #00FF00;
+    }
+    
+    /* Tab styling */
+    .stTabs [data-baseweb="tab-list"] {
+        gap: 24px;
+    }
+    
+    .stTabs [data-baseweb="tab"] {
+        height: 50px;
+        white-space: pre-wrap;
+        background-color: #262730;
+        border-radius: 4px 4px 0px 0px;
+        gap: 1px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+    
+    .stTabs [aria-selected="true"] {
+        background-color: #FF4B4B;
+    }
+    
+    /* Header styling */
+    .main-header {
+        color: #FF4B4B;
+        text-align: center;
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+    }
+    
+    .sub-header {
+        color: #FAFAFA;
+        text-align: center;
+        font-size: 1.2rem;
+        margin-bottom: 2rem;
+    }
+    
+    .author-credit {
+        color: #FF4B4B;
+        text-align: center;
+        font-size: 1rem;
+        font-weight: bold;
+        margin-bottom: 2rem;
     }
 </style>
 """, unsafe_allow_html=True)
 
-# Main dashboard
-st.title("🏦 InnBucks Zimbabwe Dashboard")
-st.markdown("### Digital Financial Services Analytics")
+# Main dashboard with dark theme
+st.markdown('<h1 class="main-header">🏦 InnBucks Zimbabwe Dashboard</h1>', unsafe_allow_html=True)
+st.markdown('<div class="author-credit">Proof of Concept by Takundanashe Moyo</div>', unsafe_allow_html=True)
+st.markdown('<h3 class="sub-header">Digital Financial Services Analytics</h3>', unsafe_allow_html=True)
 
 # KPI Metrics
 st.markdown('<div class="section-header">📈 Key Performance Indicators</div>', unsafe_allow_html=True)
@@ -338,8 +416,8 @@ with col4:
 # Footer
 st.markdown("---")
 st.markdown(
-    "<div style='text-align: center; color: #666;'>"
-    "InnBucks Zimbabwe Digital Banking Dashboard • "
+    "<div style='text-align: center; color: #FF4B4B; font-weight: bold;'>"
+    "InnBucks Zimbabwe Digital Banking Dashboard • Proof of Concept by Takundanashe Moyo • "
     "Last Updated: " + datetime.datetime.now().strftime("%Y-%m-%d %H:%M") +
     "</div>", 
     unsafe_allow_html=True
